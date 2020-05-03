@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        {% include 'head.html' %}
+    </head>
+    <body>
+        <div class="wrapper d-flex align-items-stretch">
+            {% include 'header.html' %}
+            <div id="content" class="p-4 p-md-5">
+                {% include 'menu.html' %}
+                {% block content %}{% endblock content %}
+            </div>
+        </div>
+        {% include 'footer.html' %}
+        {% include 'scripts.html' %}
+        
+    </body>
+</html>
