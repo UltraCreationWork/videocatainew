@@ -8498,7 +8498,7 @@ h1, h2, h3, h4, h5,
         -o-transition: none;
         transition: none; } }
   #sidebar ul.components {
-    padding-top: 10%;
+    padding-top: 15%;
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s; }
