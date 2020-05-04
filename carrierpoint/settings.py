@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'storages',
+    'tinymce',
     'bootstrap4',
     'activity',
     'content',
@@ -95,7 +96,7 @@ WSGI_APPLICATION = 'carrierpoint.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'carrierpoint',
+        'NAME': 'Carrier Point',
         'USER': 'postgres',
         'PASSWORD': '1234',
         'HOST': 'localhost',
