@@ -1,20 +1,104 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="row my-xl-auto">
+<section style="margin-top: 70px;">
+  <div class="main">
+  <h1>Find your best pick to watch.</h1>
+  <ul class="cards">
     {% for post in posts %}
-    <div class="col-lg-3 col-md-6">
-        <div class="card">
-            <img class="card-img-top" src="{{post.thumbnail.url}}" alt="Card image cap">
-            <div class="card-body">
-                <a class="card-title" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-                <p class="card-text">{{ post.content }}</p>
-                <p class="card-text"><small class="text-muted">{{ post.timestamp }}</small></p>
-            </div>
+    <li class="cards_item">
+      <div class="card">
+        <div class="card_image"><img src="{{post.thumbnail.url}}"></div>
+        <div class="card_content">
+          <h2 class="card_title">Card Grid Layout</h2>
+          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+          <a  href="{{ post.get_absolute_url }}" class="btn card_btn">Read More</a>
         </div>
-    </div>
+      </div>
+    </li>
     {% endfor %}
+    <li class="cards_item">
+      <div class="card">
+        <div class="card_image"><img src="https://picsum.photos/500/300/?image=5"></div>
+        <div class="card_content">
+          <h2 class="card_title">Card Grid Layout</h2>
+          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+          <button onclick="document.location = 'homebar.html'" class="btn card_btn">Read More</button>
+        </div>
+      </div>
+    </li>
+    <li class="cards_item">
+      <div class="card">
+        <div class="card_image"><img src="https://picsum.photos/500/300/?image=11"></div>
+        <div class="card_content">
+          <h2 class="card_title">Card Grid Layout</h2>
+          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+          <button onclick="document.location = 'homebar.html'" class="btn card_btn">Read More</button>
+        </div>
+      </div>
+    </li>
+    <li class="cards_item">
+      <div class="card">
+        <div class="card_image"><img src="https://picsum.photos/500/300/?image=14"></div>
+        <div class="card_content">
+          <h2 class="card_title">Card Grid Layout</h2>
+          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+          <button onclick="document.location = 'homebar.html'" class="btn card_btn">Read More</button>
+        </div>
+      </div>
+    </li>
+    <li class="cards_item">
+      <div class="card">
+        <div class="card_image"><img src="https://picsum.photos/500/300/?image=17"></div>
+        <div class="card_content">
+          <h2 class="card_title">Card Grid Layout</h2>
+          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+          <button onclick="document.location = 'homebar.html'" class="btn card_btn">Read More</button>
+        </div>
+      </div>
+    </li>
+    <li class="cards_item">
+      <div class="card">
+        <div class="card_image"><img src="https://picsum.photos/500/300/?image=2"></div>
+        <div class="card_content">
+          <h2 class="card_title">Card Grid Layout</h2>
+          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+          <button onclick="document.location = 'homebar.html'" class="btn card_btn">Read More</button>
+        </div>
+      </div>
+    </li>
+    <li class="cards_item">
+      <div class="card">
+        <div class="card_image"><img src="https://picsum.photos/500/300/?image=10"></div>
+        <div class="card_content">
+          <h2 class="card_title">Card Grid Layout</h2>
+          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+          <button onclick="document.location = 'homebar.html'" class="btn card_btn">Read More</button>
+        </div>
+      </div>
+    </li>
+    <li class="cards_item">
+      <div class="card">
+        <div class="card_image"><img src="https://picsum.photos/500/300/?image=10"></div>
+        <div class="card_content">
+          <h2 class="card_title">Card Grid Layout</h2>
+          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+          <button onclick="document.location = 'homebar.html'" class="btn card_btn">Read More</button>
+        </div>
+      </div>
+    </li>
+    <li class="cards_item">
+      <div class="card">
+        <div class="card_image"><img src="https://picsum.photos/500/300/?image=10"></div>
+        <div class="card_content">
+          <h2 class="card_title">Card Grid Layout</h2>
+          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+          <button onclick="document.location = 'homebar.html'" class="btn card_btn">Read More</button>
+        </div>
+      </div>
+    </li>
+  </ul>
 </div>
-    
-    
- 
+
+<h3 class="made_by">Made by by Ayush & Rohit </h3>
+</section>
 {% endblock content %}

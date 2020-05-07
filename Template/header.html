@@ -1,28 +1,29 @@
+{% load static %}
+<div class="header">
 
-		
-
-			<nav id="sidebar" class="active">
-        <ul class="list-unstyled components mb-5 fixed-side-bar">
-          <li class="active">
-            <a href="{% url 'home' %}"><span class="fa fa-home"></span> Home</a>
-          </li>
-          <li>
-              <a href="#"><span class="fa fa-user"></span> About</a>
-          </li>
-          <li>
-            <a href="#"><span class="fa fa-sticky-note"></span> Blog</a>
-          </li>
-          <li>
-            <a href="#"><span class="fa fa-cogs"></span> Services</a>
-          </li>
-          <li>
-            <a href="#"><span class="fa fa-paper-plane"></span> Contacts</a>
-          </li>
-        </ul>
-
-        <div class="footer">
-        	<p>
-					 
-					</p>
+        <img src="{% static 'img/profile.png' %}" alt="Avatar" class="avatar">
+                   <div id='search-box'>
+        <form action='/search' id='search-form' method='get' target='_top'>
+        <input id='search-text' name='q' placeholder='Search here..' type='text'/>
+        <button id='search-button' type='submit'><span>Search</span></button>
+        </form>
         </div>
-    	</nav>
+        </div>
+        
+        <input type="checkbox" id="check">
+        <label for="check">
+              <i class="fas fa-bars" id="btn"></i>
+              <i class="fas fa-times" id="cancel"></i>
+            </label>  
+            <div class="sidebar">
+            <header><a style="color: white;" href="index.html">My Youtube</a></header>
+          <ul>
+        <li><a href="index.html"><i class="fas fa-qrcode"></i>Dashboard</a></li>
+        <li><a href="index.html"><i class="fas fa-link"></i>Home</a></li>
+        <li><a href="index.html"><i class="fas fa-stream"></i>Trending</a></li>
+        <li><a href="#"><i class="fas fa-calendar-week"></i>Subscribed</a></li>
+        <li><a href="#"><i class="far fa-question-circle"></i>Liked</a></li>
+        <li><a href="#"><i class="fas fa-sliders-h"></i>Settings</a></li>
+        <li><a href="#"><i class="far fa-envelope"></i>Help</a></li>
+        </ul>
+</div>

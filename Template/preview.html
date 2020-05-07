@@ -1,12 +1,214 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="card" style="width: 60%; height:60%;">
-    <video width="100%" height="100%" controls autoplay>
-        <source src="{{ object.file.url }}"/>
-    </video>
-    <div class="card-body">
-        <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-heart"></span><i class="fa fa-thumbs-up" aria-hidden="true"></i></a>
+{% load static %}
+<section style="margin-top: 70px;">
+ <div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      
+      <div class="fakeimg" style="height:600px; margin-bottom: 10px;">
+        <video autoplay>
+          <source src="{{ object.file.url }}">
+        </video>
+      </div>
+      <h5 style=" margin-bottom: 10px;">Uploaded on, Dec 29, 2020 </h5>
+      
+       <h2 style=" margin-bottom: 10px;">THIS VIDEO IS PROVIDED BY US LIKE SHARE AND SUBSCRIBE.<i style="" class="fa fa-share" style="font-size:30px">Share</i></h2>   
+       <div align="right">
+        <h4 align="left">201294373 Views.</h4>
+        <i class="fa fa-thumbs-o-up " style="font-size:30px">100k </i>
+      
+         <i class="fa fa-thumbs-o-down " style="font-size:30px">10k</i>
+        
+     
+      </div>
+    </div>
+    <div class="card" style="margin-top: 10px;">
+      <div style="width: 100%; height: auto; margin-top:10px; ">
+       <img align="left" src="{% static 'img/profile.png' %}" alt="Avatar" class="avatar1">
+        <input type="submit" value="SUBSCRIBE" style=" float: right;"></input>
+        <h3 style="margin-top: 15px;">Description</h3>
+      <p style="margin-top: 40px;">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      <p style="margin-top: 10px;">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      </div>
+    </div>
+
+
+<div class="container">
+  <form action="/action_page.php">
+    
+
+    <label for="subject">Comment</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:100px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+
+
+
+
+
+
+
+
+
+
+
+<!-- comments container -->
+    <div class="comment_block" style="margin-top: 30px; margin-left: 0;">
+
+
+     <!-- new comment -->
+     <div class="new_comment">
+
+      <!-- build comment -->
+      <ul class="user_comment">
+
+        <!-- current #{user} avatar -->
+        <div class="user_avatar">
+          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/73.jpg" style="border-radius: 30px 30px 30px 30px">
+        </div><!-- the comment body --><div class="comment_body">
+          <p>Gastropub cardigan jean shorts, kogi Godard PBR&B lo-fi locavore. Organic chillwave vinyl Neutra. Bushwick Helvetica cred freegan, crucifix Godard craft beer deep v mixtape cornhole Truffaut master cleanse pour-over Odd Future beard. Portland polaroid iPhone.</p>
+        </div>
+
+        <!-- comments toolbar -->
+        <div class="comment_toolbar">
+
+          <!-- inc. date and time -->
+          <div class="comment_details">
+            <ul>
+              <li><i class="fa fa-clock-o"></i> 13:94</li>
+              <li><i class="fa fa-calendar"></i> 04/01/2015</li>
+              <li><i class="fa fa-pencil"></i> <span class="user">John Smith</span></li>
+            </ul>
+          </div>
+        </div>
+<hr>
+        <!-- start user replies -->
+      <li>
+        
+        <!-- current #{user} avatar -->
+        <div class="user_avatar">
+          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/manugamero/73.jpg" style="border-radius: 30px 30px 30px 30px">
+        </div><!-- the comment body --><div class="comment_body">
+          <p><div class="replied_to"><p><span class="user">John Smith:</span>Gastropub cardigan jean shorts, kogi Godard PBR&B lo-fi locavore. Organic chillwave vinyl Neutra. Bushwick Helvetica cred freegan, crucifix Godard craft beer deep v mixtape cornhole Truffaut master cleanse pour-over Odd Future beard. Portland polaroid iPhone.</p></div>That's exactly what I was thinking!</p>
+        </div>
+
+        <!-- comments toolbar -->
+        <div class="comment_toolbar">
+
+          <!-- inc. date and time -->
+          <div class="comment_details">
+            <ul>
+              <li><i class="fa fa-clock-o"></i> 14:52</li>
+              <li><i class="fa fa-calendar"></i> 04/01/2015</li>
+              <li><i class="fa fa-pencil"></i> <span class="user">Andrew Johnson</span></li>
+            </ul>
+          </div>
+        </div>
+<hr>
+
+      </li>
+
+        <!-- start user replies -->
+      <li>
+        
+        <!-- current #{user} avatar -->
+        <div class="user_avatar">
+          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/ManikRathee/73.jpg" style="border-radius: 30px 30px 30px 30px">
+        </div><!-- the comment body --><div class="comment_body">
+          <p><div class="replied_to"><p><span class="user">John Smith:</span>Gastropub cardigan jean shorts, kogi Godard PBR&B lo-fi locavore. Organic chillwave vinyl Neutra. Bushwick Helvetica cred freegan, crucifix Godard craft beer deep v mixtape cornhole Truffaut master cleanse pour-over Odd Future beard. Portland polaroid iPhone.</p></div>Finally someone who actually gets it!<div class="replied_to"><p><span class="user">Andrew Johnson:</span>That's exactly what I was thinking!</p></div>That's awesome!</p>
+        </div>
+<hr>
+
+      </li>
+
+      </ul>
+
+     </div>
+
+<!-- new comment -->
+     <div class="new_comment">
+
+      <!-- build comment -->
+      <ul class="user_comment">
+
+        <!-- current #{user} avatar -->
+        <div class="user_avatar">
+          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/kfriedson/73.jpg" style="border-radius: 30px 30px 30px 30px">
+        </div><!-- the comment body --><div class="comment_body">
+          <p>Gastropub cardigan jean shorts, kogi Godard PBR&B lo-fi locavore. Organic chillwave vinyl Neutra. Bushwick Helvetica cred freegan, crucifix Godard craft beer deep v mixtape cornhole Truffaut master cleanse pour-over Odd Future beard. Portland polaroid iPhone.</p>
+        </div>
+
+
+
+      </li>
+
+      </ul>
+
+     </div>
+
+    </div>
+<!------------------->
+
+
+
+
+
+
+
+
+
+
+</div>
+    
+  </div>
+  <div class="rightcolumn">
+     <div class="card">
+        <div class="card_image"><img src="https://picsum.photos/500/300/?image=14"></div>
+        <div class="card_content">
+          <h2 class="card_title">Card Grid Layout</h2>
+          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+          <button onclick="document.location = 'homebar.html'" class="btn card_btn">Read More</button>
+        </div>
+      </div>
+       <div class="card_image"><img src="https://picsum.photos/500/300/?image=17"></div>
+        <div class="card_content">
+          <h2 class="card_title">Card Grid Layout</h2>
+          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+          <button onclick="document.location = 'homebar.html'" class="btn card_btn">Read More</button>
+        </div>
+          <div class="card">
+        <div class="card_image"><img src="https://picsum.photos/500/300/?image=10"></div>
+        <div class="card_content">
+          <h2 class="card_title">Card Grid Layout</h2>
+          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+          <button onclick="document.location = 'homebar.html'" class="btn card_btn">Read More</button>
+        </div>
+      </div>
+          <div class="card">
+        <div class="card_image"><img src="https://picsum.photos/500/300/?image=10"></div>
+        <div class="card_content">
+          <h2 class="card_title">Card Grid Layout</h2>
+          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+          <button onclick="document.location = 'homebar.html'" class="btn card_btn">Read More</button>
+        </div>
+      </div>
+    <div class="card">
+      <h3>Popular Post</h3>
+      <div class="fakeimg"><p>Image</p></div>
+      <div class="fakeimg"><p>Image</p></div>
+      <div class="fakeimg"><p>Image</p></div>
+    </div>
+    <div class="card">
+      <h3>Follow Me</h3>
+      <p>Some text..</p>
     </div>
   </div>
+</div>
 
+<div class="footer">
+  <h2>Footer</h2>
+</div>
+</section>
 {% endblock content %}
