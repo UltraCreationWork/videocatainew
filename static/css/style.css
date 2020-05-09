@@ -99,7 +99,6 @@ label #cancel{
   margin-left: 250px;
 }
 section{
-  background: url(bg.jpeg) no-repeat;
   background-position: center;
   background-size: cover;
   height: 100vh;

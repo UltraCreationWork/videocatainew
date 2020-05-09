@@ -8,6 +8,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('tinymce/', include('tinymce.urls')),
     path('',home,name="home"),
+    path('accounts/',include('allauth.urls')),
     path('<int:pk>',Post_detail.as_view(),name="post")
 
 ]
