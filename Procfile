@@ -1,1 +1,1 @@
-web: gunicorn carrierpoint.wsgi
+web: gunicorn --timeout 600 carrierpoint.wsgi
