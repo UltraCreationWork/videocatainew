@@ -1,16 +1,18 @@
 {% load static %}
 <div class="header">
+      {% for author in authors %}
       {% if user.is_authenticated %}
       <a href="{% url 'account_logout' %}">
-        <img src="{% static 'img/profile.png' %}" alt="Avatar" class="avatar">
+        <img src="{{ author.profile_picture.url }}" alt="Avatar" class="avatar">
       </a>
       {% else %}
       <a href="{% url 'account_login' %}">
-        <img src="{% static 'img/profile.png' %}" alt="Avatar" class="avatar">
+        <img src="{{ author.profile_picture.url }}" alt="Avatar" class="avatar">
       </a>
       {% endif %}
+      {% endfor %}
         <div id='search-box'>
-          <form action='/search' id='search-form' method='get' target='_top'>
+          <form action="{% url 'search' %}" id='search-form' method='GET' target='_top'>
           <input id='search-text' name='q' placeholder='Search' type='text'/>
           <button id='search-button' type='submit'><span>Search</span></button>
           </form>

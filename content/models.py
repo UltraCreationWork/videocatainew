@@ -18,7 +18,7 @@ class Author(models.Model):
         return self.full_name
 
     def get_update_url(self):
-        return reverse('profile-page', kwargs={
+        return reverse('profile', kwargs={
             'user': self.user
         })
 

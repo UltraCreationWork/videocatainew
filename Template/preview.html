@@ -23,7 +23,7 @@
      </div>
      <div class="card" style="margin-top: 10px;">
       <div style="width: 100%; height: auto; margin-top:10px; ">
-       <img align="left" src="{% static 'img/profile.png' %}" alt="Avatar" class="avatar1">
+       <img align="left" src="{{ object.profile_picture.url }}" alt="Avatar" class="avatar1">
         <input type="submit" value="SUBSCRIBE" style=" float: right;">
         <h3 style="margin-top: 12px;">{{ object.title }}</h3>
         <h4 style="margin-top: 1px;">{{ object.title }}</h4>
@@ -88,7 +88,7 @@
          
          <!-- current #{user} avatar -->
          <div class="user_avatar">
-           <img src="https://s3.amazonaws.com/uifaces/faces/twitter/manugamero/73.jpg" style="border-radius: 30px 30px 30px 30px">
+           <img src="https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/73.jpg" style="border-radius: 30px 30px 30px 30px">
          </div><!-- the comment body --><div class="comment_body">
            <p><div class="replied_to"><p><span class="user">John Smith:</span>Gastropub cardigan jean shorts, kogi Godard PBR&B lo-fi locavore. Organic chillwave vinyl Neutra. Bushwick Helvetica cred freegan, crucifix Godard craft beer deep v mixtape cornhole Truffaut master cleanse pour-over Odd Future beard. Portland polaroid iPhone.</p></div>That's exactly what I was thinking!</p>
          </div>
@@ -166,13 +166,15 @@
    </div>
    <div class="rightcolumn">
       <div class="card">
-         <div class="card_image"><img src="https://picsum.photos/500/300/?image=14"></div>
+        {% for object in posts %}
+         <div class="card_image"><img src="{{object.thumbnail.url}}"></div>
          <div class="card_content">
            <h2 class="card_title">Card Grid Layout</h2>
            <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
            <button onclick="document.location = 'homebar.html'" class="btn card_btn">Watch Now</button>
          </div>
        </div>
+       {% endfor  %}
        <div class="card">
         <div class="card_image"><img src="https://picsum.photos/500/300/?image=17"></div>
          <div class="card_content">

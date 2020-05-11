@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path,include
-from content.views import home,Post_detail
+from content.views import home,Post_detail,Author_detail,search
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -9,7 +9,9 @@ urlpatterns = [
     path('tinymce/', include('tinymce.urls')),
     path('',home,name="home"),
     path('accounts/',include('allauth.urls')),
-    path('<int:pk>',Post_detail.as_view(),name="post")
+    path('<int:pk>',Post_detail.as_view(),name="post"),
+    path('author/<user>',Author_detail.as_view(),name="profile"),
+    path('search/',search,name='search')
 
 ]
 

@@ -2,23 +2,9 @@
 {% block content %}
 <section style="margin-top: 70px;">
   <div class="main">
-  <h1>Latest Videos</h1>
+  <h1>Search Results</h1>
   <ul class="cards">
-    {% for post in latest_posts %}
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image"><img src="{{post.thumbnail.url}}"></div>
-        <div class="card_content">
-          <h2 class="card_title">{{ post.title }}</h2>
-          <button onclick="document.location = '{{ post.get_absolute_url }}'" class="btn card_btn">Watch Now</button>
-        </div>
-      </div>
-    </li>
-    {% endfor %}
-  </ul>
-    <h1>Your Video List</h1>
-    <ul class="cards">
-    {% for post in posts %}
+    {% for post in queryset %}
     <li class="cards_item">
       <div class="card">
         <div class="card_image"><img src="{{post.thumbnail.url}}"></div>
