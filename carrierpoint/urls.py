@@ -16,10 +16,10 @@ urlpatterns = [
     path('',home,name="home"),
     path('accounts/',include('allauth.urls')),
     path("create/",login_required(Post_Create.as_view()),name="post-create"),
-    path('<int:pk>',Post_detail.as_view(),name="post"),
+    path('post/<int:pk>',Post_detail.as_view(),name="post"),
     path('author/<user>',Author_detail.as_view(),name="profile"),
     path('search/',search,name='search'),
-    path("filter/",BootstrapFilterView,name="filter")
+    path("filter/",BootstrapFilterView,name="filter"),
 
 ]
 
