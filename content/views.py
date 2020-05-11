@@ -2,14 +2,10 @@ from django.shortcuts import render
 from django.utils import timezone
 from.models import Post,Author
 from django.views.generic import DetailView,ListView
-from django.contrib.auth.models import User
 from django.db.models import Q
+from django.conf.global_settings import AUTH_USER_MODEL
 
-def get_author(user):
-    qs = Author.objects.filter(user=user)
-    if qs.exists():
-        return qs[0]
-    return None
+
 
 
 def search(request):
@@ -24,6 +20,7 @@ def search(request):
         'queryset': queryset
     }
     return render(request, 'search.html', context)
+    
 
 def home(request):
     context={
@@ -44,7 +41,7 @@ class Post_detail(DetailView):
 
 class Author_detail(DetailView):
     model = Author
-    template_name = 'preview.html'
+    template_name = 'profile.html'
 
 
     

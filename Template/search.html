@@ -5,6 +5,7 @@
   <h1>Search Results</h1>
   <ul class="cards">
     {% for post in queryset %}
+    {% if post in queryset %}
     <li class="cards_item">
       <div class="card">
         <div class="card_image"><img src="{{post.thumbnail.url}}"></div>
@@ -14,6 +15,9 @@
         </div>
       </div>
     </li>
+    {% else %}
+    <h2>Results Not Found</h2>
+    {% endif %}
     {% endfor %}
   </ul>
 </div>
