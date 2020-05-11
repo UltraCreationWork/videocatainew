@@ -38,7 +38,7 @@ def home(request):
 class Post_Create(CreateView):
     model = Post
     template_name = "create.html"
-    fields = ['title','file','categories','content','thumbnail','author']
+    fields = ['title','categories','content','file','thumbnail','author']
     
 
 
