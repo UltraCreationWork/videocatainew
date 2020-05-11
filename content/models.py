@@ -21,6 +21,13 @@ class Author(models.Model):
         return reverse('profile', kwargs={
             'user': self.user
         })
+class Category(models.Model):
+    name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.name
+
+
 
 class Post(models.Model):
     title           =           models.CharField(max_length=100)
@@ -30,7 +37,9 @@ class Post(models.Model):
     comment_count   =           models.IntegerField(default=0)
     author          =           models.ForeignKey(Author, on_delete=models.CASCADE)
     thumbnail       =           models.ImageField()
-    categories      =           models.CharField(max_length=255)
+    categories      =           models.ManyToManyField(Category)
+    views           =           models.IntegerField(default=0)
+    reviewed        =           models.BooleanField(default=False)
     previous_post   =           models.ForeignKey('self', related_name='previous', on_delete=models.SET_NULL, blank=True, null=True)
     next_post       =           models.ForeignKey('self', related_name='next', on_delete=models.SET_NULL, blank=True, null=True)
 
