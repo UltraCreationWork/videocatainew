@@ -165,10 +165,10 @@
    </div>
    <div class="rightcolumn">
       <div class="card">
-        <div class="card_image"><img src="{{ object.post.thumbnail.url }}"></div>
+        <div class="card_image"><img src="{{ object.thumbnail.url }}"></div>
          <div class="card_content">
-           <h2 class="card_title">{{ object.post.ttitle }}</h2>
-           <button onclick="document.location = '{{ object.post.get_absolute_url }}'" class="btn card_btn">Watch Now</button>
+           <h2 class="card_title">{{ object.ttitle }}</h2>
+           <button onclick="document.location = '{{ object.get_absolute_url }}'" class="btn card_btn">Watch Now</button>
          </div>
        </div>
        <div class="card">
