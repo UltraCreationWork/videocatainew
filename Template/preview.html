@@ -5,13 +5,12 @@
   <div class="row">
    <div class="leftcolumn">
      <div class="card">
-       
-       <div ><div class="video-container">
-        <iframe src="{{ object.file.url }}"  frameborder="0" allow="accelerometer; autoplay;  buffered; controlslist; controls; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div></div>
+      <video autoplay controls width="100%" height="auto">
+        <source src="{{ object.file.url }}" type="video/mp4" >
+        </video>
        <h5 style=" margin-bottom: 10px; margin-top:2%;" >Uploaded on, Dec 29, 2020 </h5>
        
-        <h2 style=" margin-bottom: 10px;">THIS VIDEO IS PROVIDED BY US LIKE SHARE AND SUBSCRIBE.<i class="fa fa-share" style="font-size:30px">Share</i></h2>   
+        <h2 style=" margin-bottom: 10px;">{{ object.title }}<i class="fa fa-share" style="font-size:30px">Share</i></h2>   
         <div align="right">
          <h4 align="left">201294373 Views.</h4>
          <i class="fa fa-thumbs-o-up " style="font-size:30px">100k </i>
@@ -25,8 +24,8 @@
       <div style="width: 100%; height: auto; margin-top:10px; ">
        <img align="left" src="{{ object.author.profile_picture.url }}" alt="Avatar" class="avatar1">
         <input type="submit" value="SUBSCRIBE" style=" float: right;">
-        <h3 style="margin-top: 12px;">{{ object.title }}</h3>
-        <h4 style="margin-top: 1px;">{{ object.title }}</h4>
+        <h3 style="margin-top: 12px;">{{ object.author.full_name }}</h3>
+        <h4 style="margin-top: 1px;"></h4>
       <h3 style="margin-top: 93px;">Description</h3>
       <p style="margin-top: 10px;">{{ object.content }}</p>
       </div>
@@ -166,15 +165,12 @@
    </div>
    <div class="rightcolumn">
       <div class="card">
-        {% for object in posts %}
-         <div class="card_image"><img src="{{object.thumbnail.url}}"></div>
+        <div class="card_image"><img src="{{ object.thumbnail.url }}"></div>
          <div class="card_content">
-           <h2 class="card_title">Card Grid Layout</h2>
-           <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
-           <button onclick="document.location = 'homebar.html'" class="btn card_btn">Watch Now</button>
+           <h2 class="card_title">{{ object.title }}</h2>
+           <button onclick="document.location = '{{ object.get_absolute_url }}'" class="btn card_btn">Watch Now</button>
          </div>
        </div>
-       {% endfor  %}
        <div class="card">
         <div class="card_image"><img src="https://picsum.photos/500/300/?image=17"></div>
          <div class="card_content">

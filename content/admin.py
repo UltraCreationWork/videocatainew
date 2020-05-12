@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import Author,Post,Category
+from .models import Author,Post,Category,PostView,Comment
 
 
 admin.site.register(Author)
 admin.site.register(Post)
 admin.site.register(Category)
-
-# Register your models here.
+admin.site.register(Comment)
+admin.site.register(PostView)

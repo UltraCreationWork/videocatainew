@@ -2,11 +2,27 @@ from django.db import models
 from django.conf import settings
 from django.shortcuts import reverse
 from tinymce.models import HTMLField
+from django.conf.global_settings import AUTH_USER_MODEL
+
+class PostView(models.Model):
+    user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
+    post = models.ForeignKey('Post', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.user.username
 
 
+class Comment(models.Model):
+    user        = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
+    timestamp   = models.DateTimeField(auto_now_add=True)
+    content     = models.TextField()
+    post        = models.ForeignKey('Post', related_name='comments', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.user.username
 
 class Author(models.Model):
-    user            =       models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user            =       models.OneToOneField(AUTH_USER_MODEL, on_delete=models.CASCADE)
     full_name       =       models.CharField(max_length=255,blank=True)
     profession      =       models.CharField(max_length=30, blank=True)
     about_you       =       models.TextField(blank=True)
@@ -38,8 +54,6 @@ class Post(models.Model):
     author          =           models.ForeignKey(Author, on_delete=models.CASCADE)
     thumbnail       =           models.ImageField()
     categories      =           models.ManyToManyField(Category)
-    views           =           models.IntegerField(default=0)
-    reviewed        =           models.BooleanField(default=False)
     previous_post   =           models.ForeignKey('self', related_name='previous', on_delete=models.SET_NULL, blank=True, null=True)
     next_post       =           models.ForeignKey('self', related_name='next', on_delete=models.SET_NULL, blank=True, null=True)
 
@@ -64,6 +78,10 @@ class Post(models.Model):
     @property
     def get_comments(self):
         return self.comments.all().order_by('-timestamp')
+
+    @property
+    def view_count(self):
+        return PostView.objects.filter(post=self).count()
 
 
 
