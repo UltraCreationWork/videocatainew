@@ -15,8 +15,7 @@ def search(request):
     query = request.GET.get('q')
     if query:
         queryset = queryset.filter(
-            Q(title__icontains=query)|Q(author__name__icontains=query)
-        ).distinct()
+            Q(title__icontains=query)
 
     context = {
         'queryset': queryset
