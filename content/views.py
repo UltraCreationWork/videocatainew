@@ -16,6 +16,7 @@ def search(request):
     if query:
         queryset = queryset.filter(
             Q(title__icontains=query)
+        ).distinct()
 
     context = {
         'queryset': queryset
@@ -38,7 +39,7 @@ def home(request):
 class Post_Create(CreateView):
     model = Post
     template_name = "create.html"
-    fields = ['title','categories','content','file','thumbnail','author','reviewed']
+    fields = ['title','categories','content','file','thumbnail','author']
     
 
 
