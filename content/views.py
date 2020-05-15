@@ -46,10 +46,12 @@ class Post_Create(CreateView):
 class Post_detail(DetailView):
     model = Post
     template_name = 'preview.html' 
+    
     def get_context_data(self, *args, **kwargs): 
         context = super(Post_detail, 
              self).get_context_data(*args, **kwargs)       
         return context 
+
 
 class Author_detail(DetailView):
     model = Author
