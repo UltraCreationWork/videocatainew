@@ -46,16 +46,21 @@ class Category(models.Model):
 
 
 class Post(models.Model):
-    title           =           models.CharField(max_length=100)
-    file            =           models.FileField(upload_to='media')
-    timestamp       =           models.DateTimeField(auto_now_add=True)
-    content         =           models.TextField()
-    comment_count   =           models.IntegerField(default=0)
-    author          =           models.ForeignKey(Author, on_delete=models.CASCADE)
-    thumbnail       =           models.ImageField()
-    categories      =           models.ManyToManyField(Category)
-    previous_post   =           models.ForeignKey('self', related_name='previous', on_delete=models.SET_NULL, blank=True, null=True)
-    next_post       =           models.ForeignKey('self', related_name='next', on_delete=models.SET_NULL, blank=True, null=True)
+    title                   =           models.CharField(max_length=100)
+    file                    =           models.FileField(upload_to='media')
+    timestamp               =           models.DateTimeField(auto_now_add=True)
+    content                 =           models.TextField()
+    comment_count           =           models.IntegerField(default=0)
+    author                  =           models.ForeignKey(Author, on_delete=models.CASCADE)
+    thumbnail               =           models.ImageField()
+    categories              =           models.ManyToManyField(Category)
+    suggession_first        =           models.ForeignKey('self', related_name='suggested_one', on_delete=models.SET_NULL, blank=True, null=True)
+    suggession_second       =           models.ForeignKey('self', related_name='suggested_two', on_delete=models.SET_NULL, blank=True, null=True)
+    suggession_third        =           models.ForeignKey('self', related_name='suggested_three', on_delete=models.SET_NULL, blank=True, null=True)
+    suggession_fourth       =           models.ForeignKey('self', related_name='suggested_four', on_delete=models.SET_NULL, blank=True, null=True)
+    suggession_fifth        =           models.ForeignKey('self', related_name='suggested_five', on_delete=models.SET_NULL, blank=True, null=True)
+    suggession_sixth        =           models.ForeignKey('self', related_name='suggested_six', on_delete=models.SET_NULL, blank=True, null=True)
+    suggession_seventh      =           models.ForeignKey('self', related_name='suggested_seven', on_delete=models.SET_NULL, blank=True, null=True)
 
     def __str__(self):
         return self.title
