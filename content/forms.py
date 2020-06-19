@@ -1,13 +1,8 @@
-from django.forms import forms
-from .model import Comment
-class CommentForm(forms.ModelForm):
-    content = forms.CharField(widget=forms.Textarea(attrs={
-        'class': 'form-control',
-        'placeholder': 'Type your comment',
-        'id': 'usercomment',
-        'rows': 4
-    }))
+from django.forms import forms,ModelForm
+from .models import Comment,Post
 
+class CreatForm(ModelForm):
     class Meta:
-        model = Comment
-        fields = ('content',)
+        model = Post
+        fields = ['title','categories','content','video','thumbnail','author','suggestion_first','suggestion_second','suggestion_third','suggestion_fourth','suggestion_fifth','suggestion_sixth','suggestion_seventh' ]
+

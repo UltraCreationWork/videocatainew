@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'activity',
     'content',
+    'crispy_forms',
     
 
     'allauth',
@@ -57,6 +58,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.facebook'
 ]
+
+CRISPY_TEMPLATE_PACK = 'uni_form'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

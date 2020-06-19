@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from django.http import HttpResponse 
 from django.utils import timezone
 from.models import Post,Author,Category
 from django.views.generic import DetailView,ListView
@@ -8,6 +9,8 @@ from rest_framework import generics
 from rest_framework.response import Response
 from django.views.generic.edit import CreateView
 from django.contrib.auth.decorators import login_required
+from .forms import CreatForm
+from pprint import pprint
 
 
 def search(request):
@@ -37,9 +40,23 @@ def home(request):
 
 
 class Post_Create(CreateView):
-    model = Post
     template_name = "create.html"
-    fields = ['title','categories','content','file','thumbnail','author','suggestion_first','suggestion_second','suggestion_third','suggestion_fourth','suggestion_fifth','suggestion_sixth','suggestion_seventh' ]
+    form_class = CreatForm
+    def post(self,request):
+        form = CreatForm(request.POST,request.FILES)
+        if form.is_valid():
+            post = form.save()
+            post.save()
+            return redirect("home")
+        return render(request,'create.html')
+
+        
+
+
+
+
+
+    #fields = ['title','categories','content','file','thumbnail','author','suggestion_first','suggestion_second','suggestion_third','suggestion_fourth','suggestion_fifth','suggestion_sixth','suggestion_seventh' ]
     
 
 

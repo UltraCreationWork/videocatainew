@@ -47,12 +47,12 @@ class Category(models.Model):
 
 class Post(models.Model):
     title                   =           models.CharField(max_length=100)
-    file                    =           models.FileField(upload_to='media')
+    video                    =          models.FileField(upload_to='media')
     timestamp               =           models.DateTimeField(auto_now_add=True)
     content                 =           models.TextField()
     comment_count           =           models.IntegerField(default=0)
     author                  =           models.ForeignKey(Author, on_delete=models.CASCADE)
-    thumbnail               =           models.ImageField()
+    thumbnail               =           models.ImageField(upload_to='media')
     categories              =           models.ManyToManyField(Category)
     suggestion_first        =           models.ForeignKey('self', related_name='suggested_one', on_delete=models.SET_NULL, blank=True, null=True)
     suggestion_second       =           models.ForeignKey('self', related_name='suggested_two', on_delete=models.SET_NULL, blank=True, null=True)
