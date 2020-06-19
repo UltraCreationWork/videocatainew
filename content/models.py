@@ -47,7 +47,7 @@ class Category(models.Model):
 
 class Post(models.Model):
     title                   =           models.CharField(max_length=100)
-    video                    =          models.FileField(upload_to='media')
+    video                    =          models.FileField()
     timestamp               =           models.DateTimeField(auto_now_add=True)
     content                 =           models.TextField()
     comment_count           =           models.IntegerField(default=0)
